@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,9 +29,13 @@ public class UsrArticleController {
 	}
 
 	@GetMapping("/usr/article/list")
-	@ResponseBody
-	public List<Article> list() {
-		return this.articleService.showList();
+	public String list(Model model) {
+		
+		List<Article> articles = this.articleService.showList();
+		
+		model.addAttribute("articles", articles);
+		
+		return "usr/article/list";
 	}
 
 	@GetMapping("/usr/article/detail")
