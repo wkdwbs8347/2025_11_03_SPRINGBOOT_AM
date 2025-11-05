@@ -1,28 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>list page</title>
-</head>
-<body>
-	<h1>List Page</h1>
-	<table border="1">
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:set var="pageTitle" value="목록" />
+
+<%@ include file="/view/usr/common/header.jsp"%>
+
+<h1>== list page ==</h1>
+
+<table border="1">
+	<tr>
+		<th>번호</th>
+		<th>제목</th>
+		<th>작성일</th>
+	</tr>
+	<c:forEach items="${articles }" var="article">
 		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성일</th>
+			<td>${article.getId() }</td>
+			<td><a href="/usr/article/detail?id=${article.getId() }">${article.getTitle() }</a></td>
+			<td>${article.getRegDate() }</td>
 		</tr>
-		<c:forEach items="articles" var="article">
-			<tr>
-				<td>${article.getId() }</td>
-				<td>${article.getTitle() }</td>
-				<td>${article.getRegDate() }</td>
-			</tr>
-		</c:forEach>
-	</table>
-</body>
-</html>
+	</c:forEach>
+</table>
+
+<div>
+	<button onclick="location.href='/usr/article/write'">글쓰기</button>
+</div>
+
+<%@ include file="/view/usr/common/footer.jsp"%>

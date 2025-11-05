@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Escoredream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+html * {
+	font-family: 'Escoredream';
+}
+
+body {
+	text-align: center;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 20px 0px;
+	font-size: 1.5rem;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	margin-bottom: 10px;
+}
+
+table, th, td {
+	border: 1px solid;
+	border-radius: 10px;
+	font-size: 0.8rem;
+}
+
+
+.header {
+	display: flex;
+	justify-content: center;
+	background-color: #8b8bf3;
+}
+
+.header > div > a {
+	padding: 0 20px;
+	transition: 0.7s;
+}
+
+.header > div:hover > a {
+	background-color: #7b2bd5;
+	color: white;
+}
+
+button {
+	background-color: #8b8bf3;
+	margin: 5px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color:#7b2bd5;
+	color:white;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+td > input {
+	display: block;
+	width: 100%;
+	outline: none;
+}
+
+td > textarea {
+	width: 100%;
+	outline: none;
+}
