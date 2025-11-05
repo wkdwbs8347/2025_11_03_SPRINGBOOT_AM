@@ -8,7 +8,7 @@
 
 <h1>== write page ==</h1>
 
-<form action="/usr/article/doWrite" method="post">
+<form action="/usr/article/doWrite" method="post" onsubmit="return articleSubmitChk(this);">
 	<table border="1">
 		<tr>
 			<th>제목</th>

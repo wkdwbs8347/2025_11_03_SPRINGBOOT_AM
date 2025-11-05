@@ -8,7 +8,7 @@
 
 <h1>== modify page ==</h1>
 
-<form action="/usr/article/doModify" method="post">
+<form action="/usr/article/doModify" method="post" onsubmit="return articleSubmitChk(this);">
 	<input name="id" type="hidden" value="${article.getId() }" />
 	<table border="1">
 		<tr>
